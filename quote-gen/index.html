@@ -321,7 +321,7 @@
         <div class="key-wrap">
           <input id="apiKey" type="password" autocomplete="off" placeholder="API 키를 입력하세요" aria-label="Gemini API 키">
           <button class="icon-button" id="toggleKey" type="button" aria-label="API 키 표시 전환" title="API 키 표시 전환">
-            <svg width="17" height="17" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16"><path d="M16 128s40-72 112-72 112 72 112 72-40 72-112 72S16 128 16 128Z"/><circle cx="128" cy="128" r="32"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg>
           </button>
         </div>
         <button class="save-key" id="saveKey" type="button">저장</button>
@@ -339,7 +339,7 @@
             <span class="prompt-hint">구체적으로 적을수록 더 정확한 견적이 만들어져요</span>
           </div>
           <button class="generate-button" id="generateButton" type="button">
-            <svg class="sparkle" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="m122 16 16.4 46.6L185 79l-46.6 16.4L122 142l-16.4-46.6L59 79l46.6-16.4L122 16ZM194 132l10.9 31.1L236 174l-31.1 10.9L194 216l-10.9-31.1L152 174l31.1-10.9L194 132Z"/></svg>
+            <svg class="sparkle" viewBox="0 0 24 24" fill="none"><path d="m12 2 1.5 5.2L19 9l-5.5 1.8L12 16l-1.5-5.2L5 9l5.5-1.8L12 2ZM19 15l.8 2.7L22.5 19l-2.7.8L19 22.5l-.8-2.7-2.7-.8 2.7-.8L19 15Z" fill="currentColor"/></svg>
             <span class="spinner"></span><span id="generateLabel">AI로 견적 항목 만들기</span>
           </button>
           <div class="notice" id="notice" role="status"></div>
@@ -359,7 +359,7 @@
           <div class="section-title-row"><h2>견적 항목</h2><span class="subtle" id="itemCount">0개 항목</span></div>
           <div class="items-head"><span>항목명</span><span>수량</span><span>단가</span><span></span></div>
           <div id="itemsEditor"></div>
-          <button class="add-button" id="addItem" type="button"><svg width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" aria-hidden="true"><path d="M40 128h176M128 40v176"/></svg> 직접 항목 추가</button>
+          <button class="add-button" id="addItem" type="button"><span>＋</span> 직접 항목 추가</button>
           <div class="calc-summary">
             <div class="calc-line"><span>공급가액</span><strong id="editorSubtotal">0원</strong></div>
             <div class="calc-line"><span>부가세 (10%)</span><strong id="editorVat">0원</strong></div>
@@ -372,7 +372,7 @@
         <div class="preview-toolbar">
           <div class="preview-label"><span class="live-dot"></span>견적서 미리보기</div>
           <button class="print-button" id="printButton" type="button">
-            <svg width="15" height="15" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M80 96V24h96v72M80 184H40a16 16 0 0 1-16-16v-56a16 16 0 0 1 16-16h176a16 16 0 0 1 16 16v56a16 16 0 0 1-16 16h-40"/><rect x="80" y="152" width="96" height="80"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
             PDF로 저장
           </button>
         </div>
@@ -464,7 +464,7 @@
                 <input class="table-input number" data-field="quantity" type="number" min="0" step="1" value="${escapeHtml(item.quantity)}" aria-label="수량 ${index + 1}">
                 <input class="table-input number" data-field="unitPrice" type="number" min="0" step="1000" value="${escapeHtml(item.unitPrice)}" aria-label="단가 ${index + 1}">
                 <button class="delete-button" data-action="delete" type="button" aria-label="${index + 1}번 항목 삭제" title="삭제">
-                  <svg width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M216 56H40M104 104v64M152 104v64M200 56l-8 160a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16L56 56M96 56V24h64v32"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9 7V4h6v3m3 0-1 14H7L6 7m4 4v6m4-6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
               </div>
               <div class="description"><input class="table-input" data-field="description" value="${escapeHtml(item.description)}" placeholder="세부 작업 설명" aria-label="설명 ${index + 1}"></div>

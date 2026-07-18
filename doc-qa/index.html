@@ -14,7 +14,7 @@
   }
   body { font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }
   header { background: var(--panel); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; gap: 12px; }
-  header .logo { width: 34px; height: 34px; border-radius: 9px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; }
+  header .logo { width: 34px; height: 34px; border-radius: 9px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; }
   header .logo svg { width: 19px; height: 19px; }
   header h1 { font-size: 17px; font-weight: 700; }
   header p { font-size: 12.5px; color: var(--muted); }
@@ -27,20 +27,16 @@
   aside { width: 300px; background: var(--panel); border-right: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; gap: 14px; }
   aside h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
   .dropzone { border: 2px dashed var(--border); border-radius: 12px; padding: 26px 14px; text-align: center; color: var(--muted); font-size: 13.5px; cursor: pointer; transition: .15s; }
-  .dropzone svg { display: inline-block; width: 18px; height: 18px; margin-right: 4px; vertical-align: -4px; }
   .dropzone:hover, .dropzone.drag { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
   .doc-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
   .doc-item { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
-  .doc-item > svg { width: 16px; height: 16px; flex-shrink: 0; }
   .doc-item .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
   .doc-item .size { color: var(--muted); font-size: 11.5px; flex-shrink: 0; }
   .doc-item button { border: none; background: none; color: var(--muted); cursor: pointer; font-size: 15px; }
-  .doc-item button svg { display: block; width: 15px; height: 15px; }
   .chat-area { flex: 1; display: flex; flex-direction: column; min-width: 0; }
   .messages { flex: 1; overflow-y: auto; padding: 28px 8%; display: flex; flex-direction: column; gap: 18px; }
   .empty-state { margin: auto; text-align: center; color: var(--muted); }
-  .empty-state .big { margin-bottom: 12px; }
-  .empty-state .big svg { width: 42px; height: 42px; }
+  .empty-state .big { font-size: 42px; margin-bottom: 12px; }
   .empty-state h3 { font-size: 18px; color: var(--text); margin-bottom: 6px; }
   .empty-state p { font-size: 14px; line-height: 1.6; }
   .msg { max-width: 78%; padding: 12px 16px; border-radius: 14px; font-size: 14.5px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
@@ -50,14 +46,13 @@
   .composer { border-top: 1px solid var(--border); background: var(--panel); padding: 16px 8%; display: flex; gap: 10px; }
   .composer textarea { flex: 1; border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; font-size: 14.5px; font-family: inherit; resize: none; height: 50px; }
   .composer textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
-  .composer button { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 0 22px; font-size: 14.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 7px; }
-  .composer button svg { width: 17px; height: 17px; }
+  .composer button { background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 0 22px; font-size: 14.5px; font-weight: 600; cursor: pointer; }
   .composer button:disabled { opacity: .45; cursor: default; }
 </style>
 </head>
 <body>
 <header>
-  <div class="logo" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,224H56a16,16,0,0,1-16-16V48A16,16,0,0,1,56,32h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,96V208A16,16,0,0,1,200,224ZM56,48V208H200V104H152a8,8,0,0,1-8-8V48Zm104,4.69L188.69,88H160ZM168,136H88a8,8,0,0,0,0,16h80a8,8,0,0,0,0-16Zm0,32H88a8,8,0,0,0,0,16h80a8,8,0,0,0,0-16Z"/></svg></div>
+  <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,224H56a16,16,0,0,1-16-16V48A16,16,0,0,1,56,32h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,96V208A16,16,0,0,1,200,224ZM56,48V208H200V104H152a8,8,0,0,1-8-8V48Zm104,4.69L188.69,88H160ZM168,136H88a8,8,0,0,0,0,16h80a8,8,0,0,0,0-16Zm0,32H88a8,8,0,0,0,0,16h80a8,8,0,0,0,0-16Z"/></svg></div>
   <div>
     <h1>DocuMind</h1>
     <p>사내 문서를 업로드하면, AI가 근거를 찾아 답합니다</p>
@@ -71,21 +66,21 @@
 <main>
   <aside>
     <h2>지식 베이스</h2>
-    <div class="dropzone" id="dropzone"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 168V24M80 72l48-48 48 48"/><path d="M216 152v64a16 16 0 0 1-16 16H56a16 16 0 0 1-16-16v-64"/></svg>PDF · TXT · MD 파일을<br>끌어다 놓거나 클릭</div>
+    <div class="dropzone" id="dropzone">📄 PDF · TXT · MD 파일을<br>끌어다 놓거나 클릭</div>
     <input type="file" id="fileInput" accept=".pdf,.txt,.md" multiple hidden>
     <div class="doc-list" id="docList"></div>
   </aside>
   <div class="chat-area">
     <div class="messages" id="messages">
       <div class="empty-state" id="emptyState">
-        <div class="big"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M216 72H132l-28-28H40a16 16 0 0 0-16 16v140a12 12 0 0 0 12 12h180a16 16 0 0 0 16-16V88a16 16 0 0 0-16-16Z"/><path d="M24 108h208"/></svg></div>
+        <div class="big">🗂️</div>
         <h3>문서 기반 AI 질의응답</h3>
         <p>왼쪽에 사내 규정, 매뉴얼, 계약서 등을 올리고<br>자연어로 질문하세요. 문서에 없는 내용은 없다고 답합니다.</p>
       </div>
     </div>
     <div class="composer">
       <textarea id="input" placeholder="예: 연차 이월 규정이 어떻게 되나요?"></textarea>
-      <button id="sendBtn"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m228 128-192-96 32 96-32 96 192-96Z"/><path d="M68 128h80"/></svg>전송</button>
+      <button id="sendBtn">전송</button>
     </div>
   </div>
 </main>
@@ -131,7 +126,7 @@ async function addFiles(files) {
 
 function renderDocs() {
   $("docList").innerHTML = docs.map((d, i) =>
-    `<div class="doc-item"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M88 24h88l48 48v160H88a16 16 0 0 1-16-16V40a16 16 0 0 1 16-16Z"/><path d="M176 24v48h48M112 128h64M112 160h64"/></svg><span class="name">${d.name}</span><span class="size">${(d.text.length/1000).toFixed(1)}k자</span><button onclick="removeDoc(${i})" aria-label="문서 삭제"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"><path d="M200 56 56 200M56 56l144 144"/></svg></button></div>`
+    `<div class="doc-item">📄 <span class="name">${d.name}</span><span class="size">${(d.text.length/1000).toFixed(1)}k자</span><button onclick="removeDoc(${i})">✕</button></div>`
   ).join("");
 }
 function removeDoc(i) { docs.splice(i, 1); renderDocs(); }
