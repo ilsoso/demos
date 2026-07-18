@@ -104,7 +104,7 @@
 <body>
 <header class="topbar">
   <div class="brand">
-    <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M5 5.5h14v10H9l-4 3v-13Z"/><path d="m9 10 2 2 4-4"/></svg></div>
+    <div class="brand-mark"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M216 48H40a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h48l40 32 40-32h48a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16Z"/><path d="m96 128 24 24 48-48"/></svg></div>
     <div><div class="brand-name">ReplyFlow</div><div class="brand-desc">쇼핑몰 리뷰·문의 AI 자동응대</div></div>
   </div>
   <div class="top-spacer"></div>
@@ -112,7 +112,7 @@
     <span class="api-label">Gemini API</span>
     <div class="key-box">
       <input id="apiKey" type="password" placeholder="API 키를 입력하세요" autocomplete="off">
-      <button id="toggleKey" aria-label="API 키 보기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></button>
+      <button id="toggleKey" aria-label="API 키 보기"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16"><path d="M16 128s40-72 112-72 112 72 112 72-40 72-112 72S16 128 16 128Z"/><circle cx="128" cy="128" r="32"/></svg></button>
     </div>
     <span id="keyStatus" class="api-state">키 필요</span>
   </div>
@@ -131,22 +131,22 @@
       <input type="radio" name="tone" id="toneFriendly" value="친근함"><label for="toneFriendly">친근함</label>
       <input type="radio" name="tone" id="toneExpert" value="전문적"><label for="toneExpert">전문적</label>
     </div></div>
-    <div class="settings-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><span>입력한 가게 정보와 정책은 답변 생성에만 사용되며 외부 서버에 별도로 저장하지 않습니다.</span></div>
+    <div class="settings-note"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round"><circle cx="128" cy="128" r="96"/><path d="M128 112v64M128 80h.01"/></svg><span>입력한 가게 정보와 정책은 답변 생성에만 사용되며 외부 서버에 별도로 저장하지 않습니다.</span></div>
   </aside>
 
   <section class="panel input-panel">
     <div class="panel-head"><span class="step">2</span><div><h2 class="panel-title">고객 리뷰 · 문의</h2><p class="panel-sub">응대가 필요한 고객 메시지를 붙여넣으세요.</p></div></div>
-    <div class="sample-row"><span class="caption">고객 메시지</span><button id="sampleBtn" class="sample-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12a8 8 0 1 1-2.3-5.7L20 8.6"/><path d="M20 4v4.6h-4.6"/></svg>샘플 불러오기</button></div>
+    <div class="sample-row"><span class="caption">고객 메시지</span><button id="sampleBtn" class="sample-btn"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"><path d="M232 48v56h-56"/><path d="M213.8 152a88 88 0 1 1-7.8-80L232 104"/></svg>샘플 불러오기</button></div>
     <div class="customer-wrap"><textarea id="customerMessage" maxlength="2000" placeholder="고객이 남긴 리뷰나 문의 내용을 입력하세요."></textarea><span id="sampleTag" class="sample-tag"></span><span id="charCount" class="char-count">0 / 2,000</span></div>
-    <button id="generateBtn" class="generate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 1.2 3.8L17 8l-3.8 1.2L12 13l-1.2-3.8L7 8l3.8-1.2L12 3Z"/><path d="m18.5 14 .7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3Z"/></svg><span>AI 답변 생성</span></button>
+    <button id="generateBtn" class="generate"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="m122 16 16.4 46.6L185 79l-46.6 16.4L122 142l-16.4-46.6L59 79l46.6-16.4L122 16ZM194 132l10.9 31.1L236 174l-31.1 10.9L194 216l-10.9-31.1L152 174l31.1-10.9L194 132Z"/></svg><span>AI 답변 생성</span></button>
     <p class="shortcut">⌘ + Enter로 빠르게 생성</p>
     <div id="errorBox" class="error"></div>
   </section>
 
   <section class="panel result-panel">
     <div class="panel-head"><span class="step">3</span><div><h2 class="panel-title">AI 답변 초안</h2><p class="panel-sub">생성된 답변을 확인하고 필요하면 직접 다듬으세요.</p></div><span id="resultStatus" class="status-badge">대기 중</span></div>
-    <div class="answer-card"><textarea id="answer" placeholder="" aria-label="AI 답변 초안"></textarea><div id="answerEmpty" class="answer-empty"><div><div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v11H9l-5 3V5Z"/><path d="M8 9h8m-8 3h5"/></svg></div><strong>아직 생성된 답변이 없어요</strong><span>고객 메시지를 입력하고 AI 답변 생성을 눌러주세요.</span></div></div></div>
-    <div class="result-actions"><button id="copyBtn" class="copy-btn" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>답변 복사</span></button><span class="editable-note">텍스트를 클릭해 바로 수정할 수 있어요</span></div>
+    <div class="answer-card"><textarea id="answer" placeholder="" aria-label="AI 답변 초안"></textarea><div id="answerEmpty" class="answer-empty"><div><div class="empty-icon"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M216 48H40a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h48l40 32 40-32h48a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16Z"/><path d="M80 104h96M80 144h64"/></svg></div><strong>아직 생성된 답변이 없어요</strong><span>고객 메시지를 입력하고 AI 답변 생성을 눌러주세요.</span></div></div></div>
+    <div class="result-actions"><button id="copyBtn" class="copy-btn" disabled><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linejoin="round"><rect x="40" y="40" width="128" height="128" rx="16"/><rect x="88" y="88" width="128" height="128" rx="16"/></svg><span>답변 복사</span></button><span class="editable-note">텍스트를 클릭해 바로 수정할 수 있어요</span></div>
   </section>
 </main>
 
@@ -256,7 +256,7 @@ async function generateAnswer() {
     $("copyBtn").disabled = true;
   } finally {
     button.disabled = false;
-    button.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 1.2 3.8L17 8l-3.8 1.2L12 13l-1.2-3.8L7 8l3.8-1.2L12 3Z"/><path d="m18.5 14 .7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7.7-2.3Z"/></svg><span>AI 답변 생성</span>';
+    button.innerHTML = '<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="m122 16 16.4 46.6L185 79l-46.6 16.4L122 142l-16.4-46.6L59 79l46.6-16.4L122 16ZM194 132l10.9 31.1L236 174l-31.1 10.9L194 216l-10.9-31.1L152 174l31.1-10.9L194 132Z"/></svg><span>AI 답변 생성</span>';
   }
 }
 
